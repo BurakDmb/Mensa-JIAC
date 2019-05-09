@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<import resource="classpath:de/dailab/jiactng/agentcore/conf/AgentNode.xml" />
+	<import resource="classpath:de/dailab/jiactng/agentcore/conf/Agent.xml" />
+	<import resource="classpath:de/dailab/jiactng/agentcore/conf/JMSMessaging.xml" />
+
+
+	<bean name="MensaServiceNode" parent="NodeWithDirectory">
+		<property name="agents">
+			<list>
+				<ref bean="MensaAgent"  />
+				<ref bean="ServiceAgent" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="MensaAgent" parent="SimpleAgent" singleton="false" >
+		<property name="agentBeans">
+			<list>
+				<ref bean="MensaBean" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="ServiceAgent" parent="SimpleAgent" singleton="false">
+		<property name="agentBeans">
+			<list>
+				<ref bean="ServiceBean" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="MensaBean" class="burakdmb.mensa.MensaBean" singleton="false">
+		<property name="logLevel" value="INFO" />
+	</bean>
+
+	<bean name="ServiceBean" class="burakdmb.mensa.ServiceBean" singleton="false">
+		<property name="executionInterval" value="1000" />
+		<property name="logLevel" value="INFO" />
+	</bean>
+
+</beans>
