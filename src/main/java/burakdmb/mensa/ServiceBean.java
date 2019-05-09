@@ -52,7 +52,7 @@ public class ServiceBean extends AbstractMethodExposingBean{
                 String date = dateFormat.format(new Date());
 
                 //Invoke the action from the MensaAgent and wait for the result
-                ActionResult result = invokeAndWaitForResult(act, new Serializable[]{date, new Integer(538)});
+                ActionResult result = invokeAndWaitForResult(act, new Serializable[]{date, new Integer(657)});
                 Serializable[] tmp = result.getResults();
                 String[] essenResult = (String[])tmp[0];
 
