@@ -1,5 +1,5 @@
 
-Mensa-JIAC, An Simple Project For Providing JIAC Programming Examples
+Mensa-JIAC, A Simple Project For Providing JIAC Programming Examples
 ====================
 
 This is an example project to get started with the JIAC(Java-Based Intelligent Agent Componentware), which is a framework for developing multi-agent systems(MAS) and services.
